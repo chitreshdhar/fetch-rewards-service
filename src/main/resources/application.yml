@@ -1,0 +1,59 @@
+spring:
+  config:
+    activate:
+      on-profile: default
+name: application-default
+environment: testing
+enabled: false
+service:
+  hostname: localhost # Can be configured to actual UAT Server hostname
+  path-prefix: /fetch-rewards-service/v1/
+  port: 8080 # Can be configured to actual UAT Server Port
+servers:
+  - http://localhost # To be replaced by actual UAT Server URL
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+name: applicaton-prod
+environment: production
+enabled: true
+service:
+  hostname: localhost # Can be configured to actual PROD Server hostname
+  path-prefix: /fetch-rewards-service/v1/
+  port: 8080 # Can be configured to actual PROD Server Port
+servers:
+  - http://localhost # To be replaced by actual PROD Server URL
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+name: application-dev
+environment: development
+enabled: false
+service:
+  hostname: localhost # Can be configured to actual DEV Server hostname
+  path-prefix: /fetch-rewards-service/v1/
+  port: 8080 # Can be configured to actual DEV Server Port
+servers:
+  - https://localhost # To be replaced by actual DEV Server URL
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: stage
+name: application-stage
+environment: stage
+enabled: false
+service:
+  hostname: localhost  # Can be configured to actual STAGE Server hostname
+  path-prefix: /fetch-rewards-service/v1/
+  port: 8080 # Can be configured to actual STAGE Server Port
+servers:
+  - https://localhost # To be replaced by actual stage Server URL
